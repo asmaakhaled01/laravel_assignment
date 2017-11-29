@@ -10,6 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::auth();
+//Route::get('auth/logout', 'Auth\AuthController@logout');
+
+Route::get('/home', function (){
+    return view('welcome');
+});
 Route::get('/', function () {
      return view('welcome');
  });

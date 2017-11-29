@@ -10,8 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
- Route::get('/', 'MainController@listFilm');
+//Route::auth();
+ //Route::get('/', 'MainController@listFilm');
  Route::get('films', 'MainController@listFilm');
  Route::any('films/create', 'MainController@createFilm');
  Route::get('films/{slug}', 'MainController@showFilm');
