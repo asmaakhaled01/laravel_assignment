@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class FilmGenres extends Model
 {
+    public $timestamps = FALSE;
     /**
      * @var array
      */

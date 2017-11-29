@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class FilmComment extends Model
 {
+    public $timestamps = FALSE;
     /**
      * The table associated with the model.
      * 
