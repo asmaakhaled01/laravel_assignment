@@ -18,7 +18,7 @@ class FilmRepository {
         return \App\Models\Film::
                     leftJoin('film_genres', 'film_genres.film_id', '=', 'film.id')
                     ->leftJoin('genre', 'film_genres.genre_id', '=', 'genre.id')
-                    ->where('film.slug','=',$slug)
+                    ->whereRaw('LOWER(film.slug) LIKE "'.strtolower($slug).'"' )
                     ->select('film.id as id', 'film.name as name', 'film.photo_path', 'film.description',
                                 'film.realease_date', 'film.rating', 'film.ticket_price','film.country',
                                 'film.slug', 'genre.name as genre')
