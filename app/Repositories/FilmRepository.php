@@ -24,4 +24,13 @@ class FilmRepository {
                                 'film.slug', 'genre.name as genre')
                     ->get()->toArray();
     }
+    
+    public function getFilmCommentsById($filmId){
+        return \App\Models\Film::
+                    leftJoin('film_comment', 'film_comment.film_id', '=', 'film.id')
+                    ->where('film.id','=',$filmId)
+                    ->whereNotNull('film_comment.name')
+                    ->select('film_comment.name as name', 'film_comment.comment as comment')
+                    ->get()->toArray();
+    }
 }

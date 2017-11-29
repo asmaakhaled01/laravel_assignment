@@ -29,8 +29,10 @@ class FilmService {
         $response = array();
         try{
             $films =$this->formateFilmswithGenres($this->filmRepository->getFilmDetailsBySlug($slug));
-            if($films){
-             $response = $films[0];   
+            if($films && isset($films[0])){
+                $film = $films[0];
+                $filmComments = $this->filmRepository->getFilmCommentsById($film['id']);
+                $response = ['film' => $film , 'comments' => $filmComments];   
             }
         }  catch (\Exception $exc){
            app('logger')->addError("FilmService:getFilmDetailsBySlug Exception ".$exc->getMessage() ,LogFilesEnum::$WEBSERVICE); 
