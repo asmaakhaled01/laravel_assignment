@@ -12,8 +12,9 @@ class MainController extends Controller {
     }
     
     public function createFilm(Request $request) {
-        echo "in web createFilm";
-        exit;
+        $apiURL = route('createFilmApi');
+        $genresListURL = route('listGenresApi');
+        return view('createfilm',['apiURL' => $apiURL, 'listGenresApi' => $genresListURL]);
     }    
     
 }

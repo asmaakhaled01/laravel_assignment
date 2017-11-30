@@ -12,6 +12,16 @@ class GenreService {
         $this->genreRepository = $genreRepository;
     }
     
+    public function getAllGenres(){
+        $response = FALSE;
+        try{
+            $response = $this->genreRepository->getAllGenres();
+        }  catch (\Exception $exc){
+           app('logger')->addError("GenreService:getAllGenres Exception ".$exc->getMessage() ,LogFilesEnum::$WEBSERVICE); 
+        }
+        return $response;
+    }
+    
     public function validGenreIds($genresIds){
         $response = FALSE;
         try{

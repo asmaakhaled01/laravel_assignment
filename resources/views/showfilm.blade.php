@@ -2,7 +2,6 @@
 
 @section('content')
 <script src="{!! asset('js/showFilm.js') !!}"></script>
-<link href="{!! asset('css/filmList.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <div class="container">
     <div class="row">
         <a class="btn btn-primary" href="{{ url('/films/create') }}">Create a film</a>
