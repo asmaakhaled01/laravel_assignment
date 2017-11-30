@@ -65,7 +65,7 @@ class FilmAndCommentSeeder extends Seeder
             'ticket_price'=> '25.5',
             'country'=> 'US',
             'slug'=> 'animationAdventure1',
-            'photo_path'=> '‎demo2.jpg'
+            'photo_path'=> 'demo2.jpg'
         ]);
         
         $filmId = DB::getPdo()->lastInsertId();
@@ -97,8 +97,8 @@ class FilmAndCommentSeeder extends Seeder
             'rating'=> '4',
             'ticket_price'=> '27.5',
             'country'=> 'US',
-            'slug'=> '‎animationComedy1',
-            'photo_path'=> '‎demo3.jpg'
+            'slug'=> 'animationComedy1',
+            'photo_path'=> 'demo3.jpg'
         ]);
         
         $filmId = DB::getPdo()->lastInsertId();
