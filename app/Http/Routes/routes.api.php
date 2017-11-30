@@ -15,6 +15,6 @@
 Route::group(['prefix' => 'api'], function () {
     Route::get('films', 'FilmController@listFilm');
     Route::post('films/create', 'FilmController@createFilm');   
-    Route::get('films/{slug}', 'FilmController@getFilm');
+    Route::get('films/{slug}',  [ 'as' => 'showFilmApi', 'uses' => 'FilmController@getFilm' ]);
 });
 

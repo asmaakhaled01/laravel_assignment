@@ -19,8 +19,9 @@ function formateFilmList(films){
     filmPhoto = value.photo_path;
     filmListWithSlider += '<div class="col-xs-3   gallery-item"> <a href="films/'+filmSlug+'">'+filmName+' </a> \n\
                             <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery"> \n\
-                            <img src="films_images/'+filmPhoto+'" class="img-responsive img-gallery" alt="'+filmName+'"> </a> </div> <!-- /.col -->';
+                            <img src="http://'+location.host+'/films_images/'+filmPhoto+'" class="img-responsive img-gallery" alt="'+filmName+'"> </a> </div> <!-- /.col -->';
     });
+
     filmListWithSlider += '</div> <!--/.row --> </div> <!-- /.container --> </div> <!-- /.gallery --> <div class="modal fade" id="modalGallery" tabindex="-1" role="dialog" aria-labelledby="modalGalleryLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> <h4 class="modal-title" id="modalGalleryLabel">Gallery</h4> </div> <!-- /.modal-header --> <div class="modal-body"> <div id="carouselGallery" class="carousel slide" data-ride="carousel" data-interval="false"> <div class="carousel-inner"> </div> <!-- /.carousel-inner --> </div> <!-- /.carousel --> </div> <!-- /.modal-body --> <div class="modal-footer"> <ul class="pagination"> </ul> </div> <!-- /.modal-footer --> </div> <!-- /.modal-content --> </div> <!-- /.modal-dialog --> </div> <!-- /.modal -->';
     return filmListWithSlider;
 }

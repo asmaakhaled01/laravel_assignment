@@ -5,15 +5,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MainController extends Controller {
- 
-    public function listFilm(Request $request) {
-        echo "in web listFilm";
-        exit;
-    }
 
     public function showFilm(Request $request) {
-        echo "in web showFilm";
-        exit;
+        $apiURL = route('showFilmApi', ['slug' => $request->slug]);
+        return view('showfilm',['apiURL' => $apiURL]);
     }
     
     public function createFilm(Request $request) {

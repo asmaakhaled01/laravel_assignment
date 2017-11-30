@@ -11,7 +11,6 @@
 |
 */
 Route::auth();
-//Route::get('auth/logout', 'Auth\AuthController@logout');
 
 Route::get('/home', function (){
     return view('welcome');
